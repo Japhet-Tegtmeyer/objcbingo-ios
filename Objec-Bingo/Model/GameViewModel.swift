@@ -144,6 +144,28 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    func setChildBoard(user: User) async {
+        do {
+            var randomBoard = currentGame?.boards.randomElement()
+            
+            let userDocRef = Firestore.firestore().collection("users").document(user.id)
+            try await userDocRef.updateData(["childCardId": randomBoard])
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+        }
+    }
+    
+    func setSecondChildBoard(user: User) async {
+        do {
+            var randomBoard = currentGame?.boards.randomElement()
+            
+            let userDocRef = Firestore.firestore().collection("users").document(user.id)
+            try await userDocRef.updateData(["secondChildCardId": randomBoard])
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+        }
+    }
+    
     /// Clears the board for the given user.
     /// - Parameter user: The user object.
     func clearBoard(for user: User) async {
@@ -176,6 +198,42 @@ class GameViewModel: ObservableObject {
             try await userRef.updateData(["s23": false])
             try await userRef.updateData(["s24": false])
             try await userRef.updateData(["s25": false])
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+        }
+    }
+    
+    func clearChildBoard(for user: User) async {
+        do {
+            // Reference to the user document
+            let userRef = Firestore.firestore().collection("users").document(user.id)
+            
+            // Update all child board fields to false
+            try await userRef.updateData([
+                "cs1": false, "cs2": false, "cs3": false, "cs4": false, "cs5": false,
+                "cs6": false, "cs7": false, "cs8": false, "cs9": false, "cs10": false,
+                "cs11": false, "cs12": false, "cs13": false, "cs14": false, "cs15": false,
+                "cs16": false, "cs17": false, "cs18": false, "cs19": false, "cs20": false,
+                "cs21": false, "cs22": false, "cs23": false, "cs24": false, "cs25": false
+            ])
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+        }
+    }
+
+    func clearSecondChildBoard(for user: User) async {
+        do {
+            // Reference to the user document
+            let userRef = Firestore.firestore().collection("users").document(user.id)
+            
+            // Update all second child board fields to false
+            try await userRef.updateData([
+                "c2s1": false, "c2s2": false, "c2s3": false, "c2s4": false, "c2s5": false,
+                "c2s6": false, "c2s7": false, "c2s8": false, "c2s9": false, "c2s10": false,
+                "c2s11": false, "c2s12": false, "c2s13": false, "c2s14": false, "c2s15": false,
+                "c2s16": false, "c2s17": false, "c2s18": false, "c2s19": false, "c2s20": false,
+                "c2s21": false, "c2s22": false, "c2s23": false, "c2s24": false, "c2s25": false
+            ])
         } catch {
             print("DEBUG: \(error.localizedDescription)")
         }
@@ -331,6 +389,208 @@ class GameViewModel: ObservableObject {
         await toggleField(for: user, field: "s25")
     }
     
+    // First Child Toggle Functions
+    func toggleCS1(for user: User) async {
+        await toggleField(for: user, field: "cs1")
+    }
+
+    func toggleCS2(for user: User) async {
+        await toggleField(for: user, field: "cs2")
+    }
+
+    func toggleCS3(for user: User) async {
+        await toggleField(for: user, field: "cs3")
+    }
+
+    func toggleCS4(for user: User) async {
+        await toggleField(for: user, field: "cs4")
+    }
+
+    func toggleCS5(for user: User) async {
+        await toggleField(for: user, field: "cs5")
+    }
+
+    func toggleCS6(for user: User) async {
+        await toggleField(for: user, field: "cs6")
+    }
+
+    func toggleCS7(for user: User) async {
+        await toggleField(for: user, field: "cs7")
+    }
+
+    func toggleCS8(for user: User) async {
+        await toggleField(for: user, field: "cs8")
+    }
+
+    func toggleCS9(for user: User) async {
+        await toggleField(for: user, field: "cs9")
+    }
+
+    func toggleCS10(for user: User) async {
+        await toggleField(for: user, field: "cs10")
+    }
+
+    func toggleCS11(for user: User) async {
+        await toggleField(for: user, field: "cs11")
+    }
+
+    func toggleCS12(for user: User) async {
+        await toggleField(for: user, field: "cs12")
+    }
+
+    func toggleCS13(for user: User) async {
+        await toggleField(for: user, field: "cs13")
+    }
+
+    func toggleCS14(for user: User) async {
+        await toggleField(for: user, field: "cs14")
+    }
+
+    func toggleCS15(for user: User) async {
+        await toggleField(for: user, field: "cs15")
+    }
+
+    func toggleCS16(for user: User) async {
+        await toggleField(for: user, field: "cs16")
+    }
+
+    func toggleCS17(for user: User) async {
+        await toggleField(for: user, field: "cs17")
+    }
+
+    func toggleCS18(for user: User) async {
+        await toggleField(for: user, field: "cs18")
+    }
+
+    func toggleCS19(for user: User) async {
+        await toggleField(for: user, field: "cs19")
+    }
+
+    func toggleCS20(for user: User) async {
+        await toggleField(for: user, field: "cs20")
+    }
+
+    func toggleCS21(for user: User) async {
+        await toggleField(for: user, field: "cs21")
+    }
+
+    func toggleCS22(for user: User) async {
+        await toggleField(for: user, field: "cs22")
+    }
+
+    func toggleCS23(for user: User) async {
+        await toggleField(for: user, field: "cs23")
+    }
+
+    func toggleCS24(for user: User) async {
+        await toggleField(for: user, field: "cs24")
+    }
+
+    func toggleCS25(for user: User) async {
+        await toggleField(for: user, field: "cs25")
+    }
+
+    // Second Child Toggle Functions
+    func toggleC2S1(for user: User) async {
+        await toggleField(for: user, field: "c2s1")
+    }
+
+    func toggleC2S2(for user: User) async {
+        await toggleField(for: user, field: "c2s2")
+    }
+
+    func toggleC2S3(for user: User) async {
+        await toggleField(for: user, field: "c2s3")
+    }
+
+    func toggleC2S4(for user: User) async {
+        await toggleField(for: user, field: "c2s4")
+    }
+
+    func toggleC2S5(for user: User) async {
+        await toggleField(for: user, field: "c2s5")
+    }
+
+    func toggleC2S6(for user: User) async {
+        await toggleField(for: user, field: "c2s6")
+    }
+
+    func toggleC2S7(for user: User) async {
+        await toggleField(for: user, field: "c2s7")
+    }
+
+    func toggleC2S8(for user: User) async {
+        await toggleField(for: user, field: "c2s8")
+    }
+
+    func toggleC2S9(for user: User) async {
+        await toggleField(for: user, field: "c2s9")
+    }
+
+    func toggleC2S10(for user: User) async {
+        await toggleField(for: user, field: "c2s10")
+    }
+
+    func toggleC2S11(for user: User) async {
+        await toggleField(for: user, field: "c2s11")
+    }
+
+    func toggleC2S12(for user: User) async {
+        await toggleField(for: user, field: "c2s12")
+    }
+
+    func toggleC2S13(for user: User) async {
+        await toggleField(for: user, field: "c2s13")
+    }
+
+    func toggleC2S14(for user: User) async {
+        await toggleField(for: user, field: "c2s14")
+    }
+
+    func toggleC2S15(for user: User) async {
+        await toggleField(for: user, field: "c2s15")
+    }
+
+    func toggleC2S16(for user: User) async {
+        await toggleField(for: user, field: "c2s16")
+    }
+
+    func toggleC2S17(for user: User) async {
+        await toggleField(for: user, field: "c2s17")
+    }
+
+    func toggleC2S18(for user: User) async {
+        await toggleField(for: user, field: "c2s18")
+    }
+
+    func toggleC2S19(for user: User) async {
+        await toggleField(for: user, field: "c2s19")
+    }
+
+    func toggleC2S20(for user: User) async {
+        await toggleField(for: user, field: "c2s20")
+    }
+
+    func toggleC2S21(for user: User) async {
+        await toggleField(for: user, field: "c2s21")
+    }
+
+    func toggleC2S22(for user: User) async {
+        await toggleField(for: user, field: "c2s22")
+    }
+
+    func toggleC2S23(for user: User) async {
+        await toggleField(for: user, field: "c2s23")
+    }
+
+    func toggleC2S24(for user: User) async {
+        await toggleField(for: user, field: "c2s24")
+    }
+
+    func toggleC2S25(for user: User) async {
+        await toggleField(for: user, field: "c2s25")
+    }
+    
     /// Toggles the specified field for the given user.
     /// - Parameters:
     ///   - user: The user object.
@@ -375,19 +635,3 @@ class GameViewModel: ObservableObject {
         }
     }
 }
-
-
-//:root[data-theme="light"] {
-//  --text: #040e01;
-//  --background: #f6fef1;
-//  --primary: #6ff218;
-//  --secondary: #78f7d7;
-//  --accent: #4de4f5;
-//}
-//:root[data-theme="dark"] {
-//  --text: #f4fef1;
-//  --background: #060e01;
-//  --primary: #65e70d;
-//  --secondary: #088767;
-//  --accent: #0aa2b2;
-//}

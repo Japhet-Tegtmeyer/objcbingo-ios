@@ -93,6 +93,11 @@ struct RegistrationView: View {
                             .resizable()
                             .frame(width: 65, height: 20)
                     }
+                    .foregroundColor(.black)
+                    .padding(2)
+                    .background(.white)
+                    .cornerRadius(5)
+                    .padding(.top, 3)
                     .font(.caption)
                 }
             }

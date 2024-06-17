@@ -92,4 +92,37 @@ class AuthViewModel: ObservableObject {
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
         self.currentUser = try? snapshot.data(as: User.self)
     }
+    
+    func addChild() async throws {
+        guard var currentUser = currentUser else { return }
+        
+        if currentUser.children < 2 {
+            currentUser.children += 1
+            let encodedUser = try Firestore.Encoder().encode(currentUser)
+            try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser)
+            await fetchUser()
+        }
+    }
+    
+    func deleteChild() async throws {
+        guard var currentUser = currentUser else { return }
+        currentUser.children -= 1
+        currentUser.childCardId = nil
+        currentUser.childName = nil
+        
+        let encodedUser = try Firestore.Encoder().encode(currentUser)
+        try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser)
+        await fetchUser()
+    }
+    
+    func deleteSecondChild() async throws {
+        guard var currentUser = currentUser else { return }
+        currentUser.children -= 1
+        currentUser.secondChildCardId = nil
+        currentUser.secondChildName = nil
+        
+        let encodedUser = try Firestore.Encoder().encode(currentUser)
+        try await Firestore.firestore().collection("users").document(currentUser.id).setData(encodedUser)
+        await fetchUser()
+    }
 }

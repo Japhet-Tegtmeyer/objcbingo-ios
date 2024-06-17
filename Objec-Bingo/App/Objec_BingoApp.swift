@@ -8,23 +8,23 @@
 import SwiftUI
 import Firebase
 import MijickPopupView
+import AppTrackingTransparency
 
 @main
 struct Objec_BingoApp: App {
-    @StateObject var viewModel = AuthViewModel()
+    @StateObject var authViewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var gameViewModel = GameViewModel()
-    
-//    init() {
-//        FirebaseApp.configure()
-//    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(authViewModel)
                 .fontDesign(.monospaced)
                 .foregroundStyle(.text)
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+                }
         }
     }
 }

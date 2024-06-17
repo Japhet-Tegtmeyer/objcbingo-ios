@@ -45,12 +45,15 @@ struct ProfileView: View {
                     Section("General") {
                         HStack {
                             SettingsRowView(imageName: "gearshape", title: "Version", tintColor: Color(.systemGray))
-                            
                             Spacer()
-                            
                             Text("BETA 1.0.0")
                                 .font(.subheadline)
                                 .foregroundStyle(.text.opacity(0.7))
+                        }
+                        NavigationLink {
+                            IconListView()
+                        } label: {
+                            SettingsRowView(imageName: "command.square", title: "Icon", tintColor: Color(.systemBlue))
                         }
                     }
                     
@@ -59,9 +62,7 @@ struct ProfileView: View {
                             SettingsRowView(imageName: "xmark", title: "", tintColor: .red)
                             
                             Spacer()
-                            
                             Text("=")
-                            
                             Spacer()
                             
                             Text("Clear Board")

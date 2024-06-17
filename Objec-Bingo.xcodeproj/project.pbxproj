@@ -58,7 +58,33 @@
 		AFC926B72C07973E00116CE0 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC926B62C07973E00116CE0 /* LeaderboardView.swift */; };
 		AFDD6C7B2C029E6D00BA1E49 /* MainCardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD6C7A2C029E6D00BA1E49 /* MainCardOverlayView.swift */; };
 		AFDD6C7D2C029F1100BA1E49 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDD6C7C2C029F1100BA1E49 /* EditProfileView.swift */; };
+		AFE4957C2C1FC31B00A17B4B /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4957B2C1FC31B00A17B4B /* WidgetView.swift */; };
+		AFE4959E2C20791500A17B4B /* ChildCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4959D2C20791500A17B4B /* ChildCreationView.swift */; };
+		AFE495A02C2084E600A17B4B /* ChildCardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4959F2C2084E600A17B4B /* ChildCardOverlayView.swift */; };
+		AFE495A32C20850C00A17B4B /* SecondChildOverlayVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE495A22C20850C00A17B4B /* SecondChildOverlayVIew.swift */; };
+		AFE495A52C2086BD00A17B4B /* ChildTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE495A42C2086BD00A17B4B /* ChildTabView.swift */; };
+		AFE495A72C20873D00A17B4B /* SecondChildTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE495A62C20873D00A17B4B /* SecondChildTabView.swift */; };
+		AFE495AA2C2095A100A17B4B /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AFE495A92C2095A100A17B4B /* GoogleMobileAds */; };
+		AFE495B12C20999700A17B4B /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE495B02C20999700A17B4B /* BannerView.swift */; };
+		AFFE7BEA2C1F0B850020B429 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE7BE92C1F0B850020B429 /* TabButton.swift */; };
+		AFFE7BED2C1F10960020B429 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE7BEC2C1F10960020B429 /* TabView.swift */; };
+		AFFE7BF72C1F223D0020B429 /* IconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE7BF62C1F223D0020B429 /* IconSettings.swift */; };
+		AFFE7BF92C1F27010020B429 /* IconRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE7BF82C1F27010020B429 /* IconRowView.swift */; };
+		AFFE7BFB2C1F27F70020B429 /* IconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE7BFA2C1F27F70020B429 /* IconListView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFE4959B2C1FC62800A17B4B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF3DA0FA2BFF7CB200D120C3 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -85,6 +111,20 @@
 		AFC926B62C07973E00116CE0 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		AFDD6C7A2C029E6D00BA1E49 /* MainCardOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardOverlayView.swift; sourceTree = "<group>"; };
 		AFDD6C7C2C029F1100BA1E49 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		AFE4957B2C1FC31B00A17B4B /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		AFE495832C1FC62500A17B4B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AFE495852C1FC62500A17B4B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AFE4959D2C20791500A17B4B /* ChildCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCreationView.swift; sourceTree = "<group>"; };
+		AFE4959F2C2084E600A17B4B /* ChildCardOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCardOverlayView.swift; sourceTree = "<group>"; };
+		AFE495A22C20850C00A17B4B /* SecondChildOverlayVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChildOverlayVIew.swift; sourceTree = "<group>"; };
+		AFE495A42C2086BD00A17B4B /* ChildTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTabView.swift; sourceTree = "<group>"; };
+		AFE495A62C20873D00A17B4B /* SecondChildTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChildTabView.swift; sourceTree = "<group>"; };
+		AFE495B02C20999700A17B4B /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		AFFE7BE92C1F0B850020B429 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		AFFE7BEC2C1F10960020B429 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		AFFE7BF62C1F223D0020B429 /* IconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSettings.swift; sourceTree = "<group>"; };
+		AFFE7BF82C1F27010020B429 /* IconRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRowView.swift; sourceTree = "<group>"; };
+		AFFE7BFA2C1F27F70020B429 /* IconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +158,7 @@
 				AF722D142C0A3CBE00030EE3 /* FirebaseAnalyticsSwift in Frameworks */,
 				AF722D1A2C0A3CBE00030EE3 /* FirebaseAppDistribution-Beta in Frameworks */,
 				AF722D3E2C0A3CBE00030EE3 /* FirebaseRemoteConfig in Frameworks */,
+				AFE495AA2C2095A100A17B4B /* GoogleMobileAds in Frameworks */,
 				AF722D422C0A3CBE00030EE3 /* FirebaseStorage in Frameworks */,
 				AF722D1E2C0A3CBE00030EE3 /* FirebaseAuthCombine-Community in Frameworks */,
 				AF722D442C0A3CBE00030EE3 /* FirebaseStorageCombine-Community in Frameworks */,
@@ -132,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				AF9176C52BFF778500313F51 /* Objec-Bingo */,
+				AFE495822C1FC62500A17B4B /* Frameworks */,
 				AF9176C42BFF778500313F51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				AF5BBEA22C00C0860051ED09 /* GameViewModel.swift */,
+				AFFE7BF62C1F223D0020B429 /* IconSettings.swift */,
 				AF3DA1422BFFCE2E00D120C3 /* AuthViewModel.swift */,
 				AF3DA1022BFFC91D00D120C3 /* User.swift */,
 				AF3DA14B2C004AD200D120C3 /* Game.swift */,
@@ -194,6 +237,17 @@
 				AF3DA0FA2BFF7CB200D120C3 /* InputView.swift */,
 				AF3DA1002BFFBE4800D120C3 /* SettingsRowView.swift */,
 				AFDD6C7A2C029E6D00BA1E49 /* MainCardOverlayView.swift */,
+				AFE4959F2C2084E600A17B4B /* ChildCardOverlayView.swift */,
+				AFE495A22C20850C00A17B4B /* SecondChildOverlayVIew.swift */,
+				AFFE7BE92C1F0B850020B429 /* TabButton.swift */,
+				AFFE7BEC2C1F10960020B429 /* TabView.swift */,
+				AFE495A42C2086BD00A17B4B /* ChildTabView.swift */,
+				AFE495B02C20999700A17B4B /* BannerView.swift */,
+				AFE495A62C20873D00A17B4B /* SecondChildTabView.swift */,
+				AFE4957B2C1FC31B00A17B4B /* WidgetView.swift */,
+				AFE4959D2C20791500A17B4B /* ChildCreationView.swift */,
+				AFFE7BF82C1F27010020B429 /* IconRowView.swift */,
+				AFFE7BFA2C1F27F70020B429 /* IconListView.swift */,
 				AFDD6C7C2C029F1100BA1E49 /* EditProfileView.swift */,
 			);
 			path = Components;
@@ -238,6 +292,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		AFE495822C1FC62500A17B4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFE495832C1FC62500A17B4B /* WidgetKit.framework */,
+				AFE495852C1FC62500A17B4B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +311,7 @@
 				AF9176BF2BFF778500313F51 /* Sources */,
 				AF9176C02BFF778500313F51 /* Frameworks */,
 				AF9176C12BFF778500313F51 /* Resources */,
+				AFE4959B2C1FC62800A17B4B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -285,6 +349,7 @@
 				AF722D412C0A3CBE00030EE3 /* FirebaseStorage */,
 				AF722D432C0A3CBE00030EE3 /* FirebaseStorageCombine-Community */,
 				AF722D452C0A3CBE00030EE3 /* FirebaseVertexAI-Preview */,
+				AFE495A92C2095A100A17B4B /* GoogleMobileAds */,
 			);
 			productName = "Objec-Bingo";
 			productReference = AF9176C32BFF778500313F51 /* Objec-Bingo.app */;
@@ -297,7 +362,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					AF9176C22BFF778500313F51 = {
@@ -318,6 +383,7 @@
 				AF3DA1082BFFCD5900D120C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AF3DA1442C0020AE00D120C3 /* XCRemoteSwiftPackageReference "PopupView" */,
 				AFC926B32C075E2900116CE0 /* XCRemoteSwiftPackageReference "neumorphic" */,
+				AFE495A82C2095A100A17B4B /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = AF9176C42BFF778500313F51 /* Products */;
 			projectDirPath = "";
@@ -348,19 +414,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9176E12BFF798800313F51 /* LoginView.swift in Sources */,
+				AFE495A72C20873D00A17B4B /* SecondChildTabView.swift in Sources */,
 				AF3DA0FB2BFF7CB200D120C3 /* InputView.swift in Sources */,
 				AFDD6C7D2C029F1100BA1E49 /* EditProfileView.swift in Sources */,
 				AF9176C92BFF778500313F51 /* ContentView.swift in Sources */,
 				AFC926B72C07973E00116CE0 /* LeaderboardView.swift in Sources */,
 				AF3DA1482C0047F900D120C3 /* MainView.swift in Sources */,
+				AFE495A32C20850C00A17B4B /* SecondChildOverlayVIew.swift in Sources */,
+				AFE4959E2C20791500A17B4B /* ChildCreationView.swift in Sources */,
+				AFFE7BF92C1F27010020B429 /* IconRowView.swift in Sources */,
 				AF3DA14A2C004A9900D120C3 /* JoinGameView.swift in Sources */,
 				AFDD6C7B2C029E6D00BA1E49 /* MainCardOverlayView.swift in Sources */,
 				AF9176C72BFF778500313F51 /* Objec_BingoApp.swift in Sources */,
+				AFFE7BF72C1F223D0020B429 /* IconSettings.swift in Sources */,
+				AFFE7BFB2C1F27F70020B429 /* IconListView.swift in Sources */,
+				AFE495A52C2086BD00A17B4B /* ChildTabView.swift in Sources */,
+				AFFE7BED2C1F10960020B429 /* TabView.swift in Sources */,
 				AF5BBEA32C00C0860051ED09 /* GameViewModel.swift in Sources */,
 				AF3DA1032BFFC91D00D120C3 /* User.swift in Sources */,
+				AFFE7BEA2C1F0B850020B429 /* TabButton.swift in Sources */,
+				AFE495B12C20999700A17B4B /* BannerView.swift in Sources */,
 				AF3DA14C2C004AD200D120C3 /* Game.swift in Sources */,
+				AFE4957C2C1FC31B00A17B4B /* WidgetView.swift in Sources */,
 				AF3DA0FF2BFFB18A00D120C3 /* ProfileView.swift in Sources */,
 				AF3DA0FD2BFFAC5300D120C3 /* RegistrationBand.swift in Sources */,
+				AFE495A02C2084E600A17B4B /* ChildCardOverlayView.swift in Sources */,
 				AF3DA1012BFFBE4800D120C3 /* SettingsRowView.swift in Sources */,
 				AF3DA1432BFFCE2E00D120C3 /* AuthViewModel.swift in Sources */,
 				AFC926B02C06BDDE00116CE0 /* AppDelegate.swift in Sources */,
@@ -494,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Objec-Bingo/Objec-Bingo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -502,17 +581,19 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Objec-Bingo/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2B;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaphetT.ObjcBingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -530,6 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Objec-Bingo/Objec-Bingo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,17 +620,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Objec-Bingo/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2B;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JaphetT.ObjcBingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -607,6 +690,14 @@
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		AFE495A82C2095A100A17B4B /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -761,6 +852,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AFC926B32C075E2900116CE0 /* XCRemoteSwiftPackageReference "neumorphic" */;
 			productName = Neumorphic;
+		};
+		AFE495A92C2095A100A17B4B /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE495A82C2095A100A17B4B /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -64,7 +64,7 @@ struct JoinGameView: View {
             .toolbar {
                 Button {
                     Task {
-                        await authViewModel.signOut()
+                        authViewModel.signOut()
                         await authViewModel.fetchUser()
                     }
                 } label: {

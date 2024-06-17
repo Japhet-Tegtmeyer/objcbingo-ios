@@ -13,16 +13,16 @@ struct User: Identifiable, Codable {
     
     /// The full name of the user.
     var fullName: String
-
+    
     /// The email address of the user.
     var email: String
-
+    
     /// A boolean value indicating whether the first square on the user's board is checked.
     var s1: Bool = false
-
+    
     /// A boolean value indicating whether the second square on the user's board is checked.
     var s2: Bool = false
-
+    
     /// A boolean value indicating whether the third square on the user's board is checked.
     var s3: Bool = false
     
@@ -94,10 +94,76 @@ struct User: Identifiable, Codable {
     
     /// The ID of the game the user is currently participating in, if any.
     var gameId: String?
-
+    
     /// The ID of the board assigned to the user, if any.
     var cardId: String?
-
+    
+    /// A boolean value indicating whether the user has a child.
+    var children: Int = 0
+    
+    /// The ID of the board assigned to the users child, if any.
+    var childCardId: String?
+    
+    /// The ID of the board assigned to the users second child, if any.
+    var secondChildCardId: String?
+    
+    var childName: String? = ""
+    
+    var secondChildName: String? = ""
+    
+    var cs1: Bool = false
+    var cs2: Bool = false
+    var cs3: Bool = false
+    var cs4: Bool = false
+    var cs5: Bool = false
+    var cs6: Bool = false
+    var cs7: Bool = false
+    var cs8: Bool = false
+    var cs9: Bool = false
+    var cs10: Bool = false
+    var cs11: Bool = false
+    var cs12: Bool = false
+    var cs13: Bool = false
+    var cs14: Bool = false
+    var cs15: Bool = false
+    var cs16: Bool = false
+    var cs17: Bool = false
+    var cs18: Bool = false
+    var cs19: Bool = false
+    var cs20: Bool = false
+    var cs21: Bool = false
+    var cs22: Bool = false
+    var cs23: Bool = false
+    var cs24: Bool = false
+    var cs25: Bool = false
+    
+    var c2s1: Bool = false
+    var c2s2: Bool = false
+    var c2s3: Bool = false
+    var c2s4: Bool = false
+    var c2s5: Bool = false
+    var c2s6: Bool = false
+    var c2s7: Bool = false
+    var c2s8: Bool = false
+    var c2s9: Bool = false
+    var c2s10: Bool = false
+    var c2s11: Bool = false
+    var c2s12: Bool = false
+    var c2s13: Bool = false
+    var c2s14: Bool = false
+    var c2s15: Bool = false
+    var c2s16: Bool = false
+    var c2s17: Bool = false
+    var c2s18: Bool = false
+    var c2s19: Bool = false
+    var c2s20: Bool = false
+    var c2s21: Bool = false
+    var c2s22: Bool = false
+    var c2s23: Bool = false
+    var c2s24: Bool = false
+    var c2s25: Bool = false
+    
+    
     /**
      The initials of the user's full name.
      
@@ -112,7 +178,7 @@ struct User: Identifiable, Codable {
         
         return ""
     }
-
+    
     /**
      The count of checked boxes on the user's board.
      
@@ -150,6 +216,6 @@ struct User: Identifiable, Codable {
 }
 
 extension User {
-/// A mock User instance for testing and development purposes.
-static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Taylor Swift", email: "test@gmail.com", gameId: "12026")
+    /// A mock User instance for testing and development purposes.
+    static var MOCK_USER = User(id: NSUUID().uuidString, fullName: "Taylor Swift", email: "test@gmail.com", gameId: "12026")
 }

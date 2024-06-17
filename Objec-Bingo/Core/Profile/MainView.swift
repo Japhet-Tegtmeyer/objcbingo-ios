@@ -9,124 +9,125 @@ import SwiftUI
 import Firebase
 import FirebaseFirestoreSwift
 import UIKit
+import GoogleMobileAds
 
 struct MainView: View {
     @EnvironmentObject var viewModel: AuthViewModel  // Authentication view model
     @StateObject private var gameViewModel = GameViewModel() // Game view model
     @State private var isSettingsShowing = false
     @State private var isEditing = false
-    @State private var showSnapshotView = false
-    @State private var snapshotImage: UIImage?
     @State private var lbIsShowing = false
-
+    @State private var isCreateChild = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(.background)
                     .ignoresSafeArea()
+                
                 VStack {
-                    Text(gameViewModel.currentGame?.id ?? "NO_GAME")
-                        .padding(.top, 50)
-                    
-                    Text("\(viewModel.currentUser?.fullName ?? "NO_NAME")")
-                        .font(.title)
-                        .bold()
-                        .onLongPressGesture {
-                            isEditing.toggle()
-                        }
-                    
-                    ZStack {
-                        Image(viewModel.currentUser?.cardId ?? "NO_BOARD")
-                            .resizable()
-                            .frame(width: 380, height: 380)
-                            .padding(.vertical)
-                            .overlay(
-                                MainCardOverlayView()
-                            )
-                    }
-                    
-                    HStack {
-                        Spacer()
-
-                        Button(action: {
-                            Task {
-                                if let user = viewModel.currentUser {
-                                    await gameViewModel.clearBoard(for: user)
-                                } else {
-                                    print("Current user is nil")
+                    TabView {
+                        VStack {
+                            Text(gameViewModel.currentGame?.id ?? "NO_GAME")
+                                .padding(.top, 50)
+                            
+                            Text("\(viewModel.currentUser?.fullName ?? "")")
+                                .font(.title)
+                                .bold()
+                                .onLongPressGesture {
+                                    isEditing.toggle()
                                 }
+                            
+                            ZStack {
+                                Image(viewModel.currentUser?.cardId ?? "NO_BOARD")
+                                    .resizable()
+                                    .frame(width: 380, height: 380)
+                                    .padding(.vertical)
+                                    .overlay(
+                                        MainCardOverlayView()
+                                    )
+                            }
+                            
+                            TabbView(lbIsShowing: $lbIsShowing)
+                            
+                        }
+                        .padding(.top, -100)
+                        .onAppear {
+                            Task {
                                 await viewModel.fetchUser()
                             }
-                        }) {
-                            Image(systemName: "xmark")
-                                .font(.title2)
-                                .foregroundColor(.red)
-                                .padding()
-                                .background(Color.red.opacity(0.2))
-                                .clipShape(Circle())
                         }
-                        .padding(.trailing, 16)
-
-                        Button(action: {
-                            Task {
-                                if let user = viewModel.currentUser {
-                                    await gameViewModel.clearBoard(for: user)
-                                    await gameViewModel.setBoard(user: user)
-                                } else {
-                                    print("Current user is nil")
+                        
+                        if viewModel.currentUser!.children > 0 {
+                            VStack {
+                                Text(gameViewModel.currentGame?.id ?? "NO_GAME")
+                                    .padding(.top, 50)
+                                
+                                Text("\(viewModel.currentUser?.childName ?? "")")
+                                    .font(.title)
+                                    .bold()
+                                    .onLongPressGesture {
+                                        isEditing.toggle()
+                                    }
+                                
+                                ZStack {
+                                    Image(viewModel.currentUser?.childCardId ?? "NO_BOARD")
+                                        .resizable()
+                                        .frame(width: 380, height: 380)
+                                        .padding(.vertical)
+                                        .overlay(
+                                            ChildCardOverlayView()
+                                        )
                                 }
-                                await viewModel.fetchUser()
+                                
+                                ChildTabView(lbIsShowing: $lbIsShowing)
                             }
-                        }) {
-                            Image(systemName: "arrow.clockwise")
-                                .font(.title2)
-                                .foregroundColor(.yellow)
-                                .padding()
-                                .background(Color.yellow.opacity(0.2))
-                                .clipShape(Circle())
-                        }
-                        .padding(.trailing, 16)
-                        
-                        Button(action: {
-                            let window = UIApplication.shared.keyWindow
-                            let renderer = UIGraphicsImageRenderer(size: window?.bounds.size ?? CGSize.zero)
-                            snapshotImage = renderer.image { _ in
-                                window?.rootViewController?.view.drawHierarchy(in: window?.bounds ?? CGRect.zero, afterScreenUpdates: true)
+                            .padding(.top, -100)
+                            .onAppear {
+                                Task {
+                                    await viewModel.fetchUser()
+                                }
                             }
-                            shareImage()
-                        }) {
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.title2)
-                                .foregroundColor(.green)
-                                .padding()
-                                .background(.green.opacity(0.2))
-                                .clipShape(Circle())
                         }
-                        .padding(.trailing, 16)
                         
-                        Button(action: {
-                            lbIsShowing.toggle()
-                        }) {
-                            Image(systemName: "info.circle")
-                                .font(.title2)
-                                .foregroundColor(.blue)
-                                .padding()
-                                .background(.blue.opacity(0.2))
-                                .clipShape(Circle())
+                        if viewModel.currentUser!.children > 1 {
+                            VStack {
+                                Text(gameViewModel.currentGame?.id ?? "NO_GAME")
+                                    .padding(.top, 50)
+                                
+                                Text("\(viewModel.currentUser?.secondChildName ?? "")")
+                                    .font(.title)
+                                    .bold()
+                                    .onLongPressGesture {
+                                        isEditing.toggle()
+                                    }
+                                
+                                ZStack {
+                                    Image(viewModel.currentUser?.secondChildCardId ?? "NO_BOARD")
+                                        .resizable()
+                                        .frame(width: 380, height: 380)
+                                        .padding(.vertical)
+                                        .overlay(
+                                            SecondChildCardOverlayView()
+                                        )
+                                }
+                                
+                                SecondChildTabView(lbIsShowing: $lbIsShowing)
+                            }
+                            .padding(.top, -100)
+                            .onAppear {
+                                Task {
+                                    await viewModel.fetchUser()
+                                }
+                            }
                         }
-                        .padding(.trailing, 16)
-
-                        Spacer()
                     }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 14)
-                            .fill(Color(.text).opacity(0.2))
-                            .frame(width: 380)
-                    )
-                    .padding(.horizontal)
+                    .tabViewStyle(.page)
+                    
+//                    BannerView()
+//                        .frame(width: GADAdSizeBanner.size.width,
+//                               height: GADAdSizeBanner.size.height)
                 }
-                .padding(.top, -100)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -141,9 +142,29 @@ struct MainView: View {
                     }
                     .padding(8)
                 }
+                
+                if viewModel.currentUser!.children < 2 {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            isCreateChild.toggle()
+                        } label: {
+                            Image(systemName: "person.fill.badge.plus")
+                                .padding(9.5)
+                                .foregroundStyle(.green)
+                                .background(.white)
+                                .clipShape(Circle())
+                        }
+                        .padding(.top, 8)
+                        .padding(.trailing, 8)
+                        .padding(.leading, -8)
+                    }
+                }
             }
             .fullScreenCover(isPresented: $isSettingsShowing) {
                 ProfileView()
+            }
+            .fullScreenCover(isPresented: $isCreateChild) {
+                ChildCreationView()
             }
             .fullScreenCover(isPresented: $isEditing) {
                 EditProfileView()
@@ -157,16 +178,6 @@ struct MainView: View {
                 }
             }
         }
-    }
-    
-    func shareImage() {
-        guard let image = snapshotImage else {
-            print("No image to share")
-            return
-        }
-        
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityViewController, animated: true, completion: nil)
     }
 }
 

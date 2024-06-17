@@ -48,10 +48,11 @@ struct GameInfoView: View {
         errorMessage = ""
 
         do {
-            try await viewModel.fetchCurrentGame()
-        } catch {
-            errorMessage = error.localizedDescription
-        }
+            await viewModel.fetchCurrentGame()
+        } 
+//        catch {
+//            errorMessage = error.localizedDescription
+//        }
 
         isLoading = false
     }

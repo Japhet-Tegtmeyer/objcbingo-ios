@@ -18,16 +18,6 @@ struct EditProfileView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background color
-                Color(.systemGray6)
-                    .ignoresSafeArea()
-                
-                // Sign-in rectangle
-                Rectangle()
-                    .frame(width: 350, height: 400)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .foregroundStyle(.white)
-                
                 VStack {
                     VStack {
                         Text("Edit Profile")
@@ -62,9 +52,9 @@ struct EditProfileView: View {
                     } label: {
                         Text("Save")
                             .frame(width: 300, height: 40)
-                            .background(.purple)
+                            .background(.blue)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.black)
                             .padding(.top)
                     }
                     .disabled(newName.isEmpty ? true : false)
